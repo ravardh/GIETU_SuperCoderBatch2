@@ -10,7 +10,10 @@ match operator:
     case '*':
         print("Multiplication",num1 * num2)
     case '/':
-        print("division",num1 / num2) if num2 != 0 else "Error: Division by zero is not allowed."
+         if num2 != 0:
+             print("division", num1 / num2)
+         else:
+             print("Error: Division by zero is not allowed.")
     case _:
         print("Invalid operator. Please enter +, -, *, or /")
 
