@@ -11,7 +11,7 @@ def partition(arr, st, end) -> int:
             swap(arr, i, j)
 
     swap(arr, j + 1, end)
-    print(arr)
+    # print(arr)
     return j + 1
 
 

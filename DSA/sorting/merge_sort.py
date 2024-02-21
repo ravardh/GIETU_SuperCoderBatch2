@@ -24,7 +24,7 @@ def conquer(arr: list, st: int, end: int, mid: int) -> None:
         arr[j] = newArr[i]
         j += 1
 
-    print(arr)
+    # print(arr)
 
 
 def divide(arr: list, st: int, end: int) -> None:
