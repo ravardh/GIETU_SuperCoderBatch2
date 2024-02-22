@@ -1,5 +1,5 @@
-s= "geeksforgeeks"
-pt="geek"
+s= input("Enter String :")
+pt=input("Enter Pattern :")
 def computeLPSArray(pattern):
     n = len(pattern)
     lps = [0] * n
