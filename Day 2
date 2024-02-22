@@ -1,0 +1,10 @@
+a = [1, 3, 5, 2, 7, 4, 3, 5, 7, 9, 3, 2, 0, 8, 9, 5]
+n = int(input("Enter the number of digits: "))
+s = sum(a[:n])
+max_sum = s
+for i in range(len(a) - n):
+    s = s - a[i] + a[i + n]  
+    max_sum = max(max_sum, s) 
+
+print("Maximum sum of consecutive numbers with", n, "digits:", max_sum)
+
