@@ -9,3 +9,16 @@ for i in range(len(a) - n):
 
 print("Maximum sum of consecutive numbers with", n, "digits:", max_sum)
 
+#Find the maximum for each and every contiguous subarray of size K.
+n = int(input("Enter number of elements in the list: "))
+list = []
+for i in range(n):
+    element = int(input("Enter element {}: ".format(i + 1)))
+    list.append(element)
+K = int(input("Enter the window size: "))
+l1 = []
+for i in range(n - K + 1):
+    l1.append(max(list[i:i + K]))
+for i in l1:
+    print(i)
+
