@@ -5,23 +5,21 @@ def merge_sort(arr):
         right_half = arr[mid:]
         merge_sort(left_half)
         merge_sort(right_half)
-        i = j = k = 0
+        i = j = 0
         while i < len(left_half) and j < len(right_half):
             if left_half[i] < right_half[j]:
-                arr[k] = left_half[i]
+                arr[i + j] = left_half[i]
                 i += 1
             else:
-                arr[k] = right_half[j]
+                arr[i + j] = right_half[j]
                 j += 1
-            k += 1
         while i < len(left_half):
-            arr[k] = left_half[i]
+            arr[i + j] = left_half[i]
             i += 1
-            k += 1
         while j < len(right_half):
-            arr[k] = right_half[j]
+            arr[i + j] = right_half[j]
             j += 1
-            k += 1
 my_list = [38, 27, 43, 3, 9, 82, 10]
 merge_sort(my_list)
 print("Sorted list:", my_list)
+
