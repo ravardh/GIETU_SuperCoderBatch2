@@ -1,0 +1,10 @@
+#Selection sort
+a=[4,8,7,1,9,2,3,6,5]
+n=len(a)            
+for i in range(0,n):
+    mini=i
+    for j in range(i+1,n):
+        if a[mini]>a[j]:
+            mini=j
+    (a[i],a[mini])=(a[mini],a[i])
+print(a)
