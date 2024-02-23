@@ -1,0 +1,12 @@
+#Using Sliding Window
+a= [1,3,5,2,7,4,8,9,5,3,5,7,9,3,2,0]
+n=int(input("Enter the length which u want to see the maximum sum of three consecutive numbers:"))
+max=win=0
+for i in range(0,n):
+    max+=a[i]
+win=max
+for i in range(0,len(a)-n):
+    if (max<win):
+        max=win
+    win=win+a[i+n]-a[i]
+print(max)
