@@ -1,0 +1,10 @@
+d={1:"abc",2:"def",5:"xyz"}
+print(d)
+try:
+    print(d[2])
+except:
+    print("The key is not present")
+else:
+    print("valid key")
+finally:
+    print("Code executed successfully")
