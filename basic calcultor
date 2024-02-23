@@ -1,0 +1,22 @@
+def switch():
+  a=int(input("enter the value :"))
+  b=int(input("enter the value :"))
+option=(int(input("enter the your option:")))
+if option==1;
+  result=('a+b')
+  print("add",result)
+elif option==2
+  result=('a-b')
+  print("sub",result)
+elif option==3
+ result=('a*b')
+ print("mul",result)
+elif option==4
+ result=('a/b')
+ print("div",result)
+elif option==5
+  result=('a%b')
+  print("mod",result)
+else
+print("invalid")
+switch()
