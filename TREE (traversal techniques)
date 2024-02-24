@@ -30,7 +30,22 @@ def inorder(root):
         inorder(root.left)
         print(root.data)
         inorder(root.right)
-        
+
+def levelorder(root):
+    if root is None:
+        return
+    Q = [root]
+    while Q:
+        level_length = len(Q)
+        for _ in range(level_length):
+            cur = Q.pop(0)
+            print(cur.data, end=" ")
+            
+            if cur.left:
+                Q.append(cur.left)
+            if cur.right:
+                Q.append(cur.right)
+        print()
 root=node(1)
 root.left=node(2)
 root.right=node(3)
@@ -51,3 +66,5 @@ print("The postorder series is:")
 post(root)
 print("The inorder series is:")
 inorder(root)
+print("The levelorder series is:")
+levelorder(root)
