@@ -1,0 +1,53 @@
+class node:
+    def __init__(self,data=None):
+        self.data=data
+        self.left=None
+        self.right=None
+        
+def pre(root):
+    if (root==None):
+        #print("-1,")
+        return
+    else:
+        print(root.data)
+        pre(root.left)
+        pre(root.right)
+        
+def post(root):
+    if (root==None):
+        #print("-1,")
+        return
+    else:
+        post(root.left)
+        post(root.right)
+        print(root.data)
+        
+def inorder(root):
+    if (root==None):
+        #print("-1,")
+        return
+    else:
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
+        
+root=node(1)
+root.left=node(2)
+root.right=node(3)
+root.left.left=node(4)
+root.left.right=node(5)
+root.right.left=node(7)
+root.left.left.left=node(8)
+root.left.right.right=node(6)
+root.left.right.right.left=node(9)
+root.left.right.right.right=node(10)
+root.right.left.left=node(11)
+root.right.left.right=node(12)
+root.right.left.right.left=node(13)
+
+print("The preorder series is:")
+pre(root)
+print("The postorder series is:")
+post(root)
+print("The inorder series is:")
+inorder(root)
