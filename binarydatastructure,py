@@ -1,0 +1,26 @@
+#binary tree data structure
+class node:
+  def _init_(self,data=None):
+    self.data=data
+    self.left=None
+    self.right=None
+
+def inorder (root):
+  if root==None:
+    return
+  print(root.data)
+  print(root.left)
+  print(root.right)
+
+root=node(1)
+root.left=node(2)
+root.right=node(4)
+root.left.left=node(3)
+root.left.right=node(6)
+root.right.left=node(5)
+root.right.right=node(7)
+
+print(root)
+print(root.data)
+print(root.left)
+print(root.right)
