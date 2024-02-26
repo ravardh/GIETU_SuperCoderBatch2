@@ -11,60 +11,39 @@ class Node:
 def inorder(root):
 
     if root:
-        # Traverse left
         inorder(root.left)
-        # Traverse root
         print(str(root.val) + "->", end='')
-        # Traverse right
         inorder(root.right)
-
 
 def postorder(root):
 
     if root:
-        # Traverse left
         postorder(root.left)
-        # Traverse right
         postorder(root.right)
-        # Traverse root
         print(str(root.val) + "->", end='')
-
 
 def preorder(root):
 
     if root:
-        # Traverse root
         print(str(root.val) + "->", end='')
-        # Traverse left
         preorder(root.left)
-        # Traverse right
         preorder(root.right)
 
 def LevelOrder(root):
  
-    # Base Case
     if root is None:
         return
- 
-    # Create an empty queue
-    # for level order traversal
     queue = []
- 
-    # Enqueue Root and initialize height
     queue.append(root)
  
     while(len(queue) > 0):
  
-        # Print front of queue and
-        # remove it from queue
         print(queue[0].val, end=" ")
         node = queue.pop(0)
  
-        # Enqueue left child
         if node.left is not None:
             queue.append(node.left)
  
-        # Enqueue right child
         if node.right is not None:
             queue.append(node.right)
  
