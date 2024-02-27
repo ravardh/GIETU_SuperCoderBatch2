@@ -1,0 +1,87 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPY8DD2rzU8z8LCJV2YaBhg",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ravardh/GIETU_SuperCoderBatch2/blob/shrejal_21CSEDS044/git27\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IoH9VuXQ7Hzn",
+        "outputId": "488d8bc9-974e-443c-86f5-95ca99a903e9"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10 2 7 14 "
+          ]
+        }
+      ],
+      "source": [
+        "class Node:\n",
+        "    def __init__(self, data):\n",
+        "        self.data = data\n",
+        "        self.left = None\n",
+        "        self.right = None\n",
+        "def leftViewUtil(root, level, max_level):\n",
+        "    if root is None:\n",
+        "        return\n",
+        "    if (max_level[0] < level):\n",
+        "        print (root.data, end = \" \")\n",
+        "        max_level[0] = level\n",
+        "    leftViewUtil(root.left, level + 1, max_level)\n",
+        "    leftViewUtil(root.right, level + 1, max_level)\n",
+        "def leftView(root):\n",
+        "    max_level = [0]\n",
+        "    leftViewUtil(root, 1, max_level)\n",
+        "if __name__ == '__main__':\n",
+        "    root = Node(10)\n",
+        "    root.left = Node(2)\n",
+        "    root.right = Node(3)\n",
+        "    root.left.left = Node(7)\n",
+        "    root.left.right = Node(8)\n",
+        "    root.right.right = Node(15)\n",
+        "    root.right.left = Node(12)\n",
+        "    root.right.right.left = Node(14)\n",
+        "    leftView(root)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "U7iM7JQTb4I4"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
