@@ -1,0 +1,36 @@
+#print all the top view of the binary tree
+class node:
+    def _init_(self,data=None):
+        self.data=data
+        self.left=None
+        self.right=None
+        
+        
+def top(root):
+    if (root==None):
+        return 0
+    queue = [(root,0)]  
+    hd_map = {}  
+    while queue:
+        node, hd = queue.pop(0)
+        if hd not in hd_map:
+            hd_map[hd] = node.data
+        if node.left:
+            queue.append((node.left, hd - 1))
+        if node.right:
+            queue.append((node.right, hd + 1))
+    for hd in sorted(hd_map.keys()):
+        print(hd_map[hd], end=" ")
+    
+root=node(20)
+root.left=node(32)
+root.right=node(10)
+root.left.left=node(15)
+root.left.right=node(12)
+root.right.left=node(8)
+root.right.right=node(24)
+root.right.right.left=node(16)
+root.right.right.right=node(2)
+print(top(root))
+
+15 32 20 10 24 2 None
