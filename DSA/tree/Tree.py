@@ -61,6 +61,17 @@ class Tree:
         for key in view.keys():
             print(view[key].data)
 
+    def left_view(self):
+        self.__left_view(self.root, 1, [0])
+
+    def right_view(self):
+        self.__right_view(self.root, 1, [0])
+
+    def count_nodes(self) -> int:
+        count: list = [0]
+        self.__count_nodes(self.root, count)
+        return count[0]
+
     def __preorder(self, root: Node | None):
         if root is None:
             return
@@ -100,6 +111,35 @@ class Tree:
         self.__printLeaf(root.left)
         self.__printLeaf(root.right)
 
+    def __left_view(self, root: Node, currentLevel: int, LEVEL: list):
+        if root is None:
+            return
+
+        if LEVEL[0] < currentLevel:
+            print(root.data)
+            LEVEL[0] = currentLevel
+
+        self.__left_view(root.left, currentLevel + 1, LEVEL)
+        self.__left_view(root.right, currentLevel + 1, LEVEL)
+
+    def __right_view(self, root: Node, curVal: int, LEVEL: list):
+        if root is None:
+            return
+
+        if LEVEL[0] < curVal:
+            print(root.data)
+            LEVEL[0] = curVal
+
+        self.__right_view(root.right, curVal + 1, LEVEL)
+        self.__right_view(root.left, curVal + 1, LEVEL)
+
+    def __count_nodes(self, root: Node, count: list):
+        if root is None:
+            return
+        count[0] = count[0] + 1
+        self.__count_nodes(root.left, count)
+        self.__count_nodes(root.right, count)
+
 
 if __name__ == '__main__':
     tree: Tree = Tree()
@@ -123,3 +163,8 @@ if __name__ == '__main__':
     tree.printLeaf()
     print("______________")
     tree.topView()
+    print("__________________left view")
+    tree.left_view()
+    print("__________________right view")
+    tree.right_view()
+    print("Total nodes ", tree.count_nodes())
