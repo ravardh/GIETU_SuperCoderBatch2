@@ -61,6 +61,30 @@ class Tree:
         for key in view.keys():
             print(view[key].data)
 
+    def bottom_view(self):
+        if self.root is None:
+            return
+
+        queue: list = []
+        view: dict = {}
+        currKey: int = 0
+
+        queue.append(QObj(self.root, currKey))
+        while len(queue) != 0:
+            currObj: QObj = queue.pop(0)
+            currNode: Node | None = currObj.node
+            currKey = currObj.key
+
+            view[currKey] = currNode
+
+            if currNode.left is not None:
+                queue.append(QObj(currNode.left, currKey - 1))
+            if currNode.right is not None:
+                queue.append(QObj(currNode.right, currKey + 1))
+
+        for key in sorted(view.keys()):
+            print(view[key].data)
+
     def left_view(self):
         self.__left_view(self.root, 1, [0])
 
@@ -159,10 +183,12 @@ if __name__ == '__main__':
     tree.inorder()
     print("_________________")
     print("Height is ", tree.findHeight())
-    print("_______________")
+    print("_______________print leaf")
     tree.printLeaf()
-    print("______________")
+    print("______________top view")
     tree.topView()
+    print("______________bottom view")
+    tree.bottom_view()
     print("__________________left view")
     tree.left_view()
     print("__________________right view")
