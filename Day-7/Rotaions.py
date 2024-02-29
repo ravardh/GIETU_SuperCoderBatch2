@@ -5,86 +5,85 @@ class Node:
         self.right = None
         self.height = 1
 
+class AVL:
+    def height(self, node):
+        if node is None:
+            return 0
+        return node.height
 
-def height(node):
-    if node is None:
-        return 0
-    return node.height
+    def balance_factor(self, node):
+        if node is None:
+            return 0
+        return self.height(node.left) - self.height(node.right)
 
+    def right_rotate(self, B):
+        A = B.left
+        temp = A.right
 
-def balance_factor(node):
-    if node is None:
-        return 0
-    return height(node.left) - height(node.right)
+        A.right = B
+        B.left = temp
 
+        B.height = 1 + max(self.height(B.left), self.height(B.right))
+        A.height = 1 + max(self.height(A.left), self.height(A.right))
 
-def right_rotate(y):
-    x = y.left
-    T2 = x.right
+        return A
 
-    x.right = y
-    y.left = T2
+    def left_rotate(self, A):
+        B = A.right
+        temp = B.left
 
-    y.height = 1 + max(height(y.left), height(y.right))
-    x.height = 1 + max(height(x.left), height(x.right))
+        B.left = A
+        A.right = temp
 
-    return x
+        A.height = 1 + max(self.height(A.left), self.height(A.right))
+        B.height = 1 + max(self.height(B.left), self.height(B.right))
 
+        return B
 
-def left_rotate(x):
-    y = x.right
-    T2 = y.left
+    def insert(self, root, data):
+        if root is None:
+            return Node(data)
 
-    y.left = x
-    x.right = T2
+        if data < root.data:
+            root.left = self.insert(root.left, data)
+        elif data > root.data:
+            root.right = self.insert(root.right, data)
+        else:
+            return root
 
-    x.height = 1 + max(height(x.left), height(x.right))
-    y.height = 1 + max(height(y.left), height(y.right))
+        root.height = 1 + max(self.height(root.left), self.height(root.right))
 
-    return y
+        balance = self.balance_factor(root)
 
+        if balance >= 2:
+            if data < root.left.data:
+                return self.right_rotate(root)
+            elif data > root.left.data:
+                root.left = self.left_rotate(root.left)
+                return self.right_rotate(root)
 
-def insert(root, data):
-    if root is None:
-        return Node(data)
-
-    if data < root.data:
-        root.left = insert(root.left, data)
-    elif data > root.data:
-        root.right = insert(root.right, data)
-    else:
+        if balance <= -2:
+            if data > root.right.data:
+                return self.left_rotate(root)
+            elif data < root.right.data:
+                root.right = self.right_rotate(root.right)
+                return self.left_rotate(root)
+        
         return root
 
-    root.height = 1 + max(height(root.left), height(root.right))
+    def preOrder_traversal(self, root):
+        if root:
+            self.preOrder_traversal(root.left)
+            print(root.data, end=' ')
+            self.preOrder_traversal(root.right)
 
-    balance = balance_factor(root)
-
-    if balance >= 2:
-        if data < root.left.data:
-            return right_rotate(root)
-        elif data > root.left.data:
-            root.left = left_rotate(root.left)
-            return right_rotate(root)
-
-    if balance <= -2:
-        if data > root.right.data:
-            return left_rotate(root)
-        elif data < root.right.data:
-            root.right = right_rotate(root.right)
-            return left_rotate(root)
-
-    return root
-
-
-def preOrder_traversal(root):
-    if root:
-        preOrder_traversal(root.left)
-        print(root.data, end=' ')
-        preOrder_traversal(root.right)
+# Example usage
+avl_tree = AVL()
 root = None
-array = [50, 45, 55, 35, 40, 48, 60, 20, 70, 41, 47, 42, 15, 22, 25, 30, 90]
-for data in array:
-    root = insert(root, data)
+array = [50,45,55,35,40,48,60,20,70,41,47,42,15,22,25,30,90]
 
+for data in array:
+    root = avl_tree.insert(root, data)
+ 
 print("Preorder Traversal of AVL Tree:")
-preOrder_traversal(root)
+avl_tree.preOrder_traversal(root)
