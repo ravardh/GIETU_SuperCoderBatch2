@@ -5,6 +5,7 @@ class Node:
         self.right = None
         self.height = 1
 
+
 class AVL:
     def height(self, node):
         if node is None:
@@ -68,22 +69,23 @@ class AVL:
             elif data < root.right.data:
                 root.right = self.right_rotate(root.right)
                 return self.left_rotate(root)
-        
+
         return root
 
-    def preOrder_traversal(self, root):
+    def inOrder_traversal(self, root):
         if root:
-            self.preOrder_traversal(root.left)
+            self.inOrder_traversal(root.left)
             print(root.data, end=' ')
-            self.preOrder_traversal(root.right)
+            self.inOrder_traversal(root.right)
+
 
 # Example usage
 avl_tree = AVL()
 root = None
-array = [50,45,55,35,40,48,60,20,70,41,47,42,15,22,25,30,90]
+array = [50, 45, 55, 35, 40, 48, 60, 20, 70, 41, 47, 42, 15, 22, 25, 30, 90]
 
 for data in array:
     root = avl_tree.insert(root, data)
- 
+
 print("Preorder Traversal of AVL Tree:")
-avl_tree.preOrder_traversal(root)
+avl_tree.inOrder_traversal(root)
