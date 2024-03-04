@@ -1,0 +1,20 @@
+def firstmissingpositive(nums):
+    n = len(nums)
+    j = 0
+    for i in range(n):
+        if nums[i] <= 0:
+            nums[i], nums[j] = nums[j], nums[i]
+            j += 1
+    for i in range(j, n):
+        if abs(nums[i]) <= n - j:
+            index = abs(nums[i]) - 1 + j
+            nums[index] = -abs(nums[index])
+    for i in range(j, n):
+        if nums[i] > 0:
+            return i - j + 1
+    return n - j + 1
+
+
+k=eval(input("Enter the values in comma separation"))
+m=list(k)
+print(firstmissingpositive(m))
