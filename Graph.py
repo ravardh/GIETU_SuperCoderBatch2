@@ -1,46 +1,91 @@
-class edge:
-    def __init__(self,source,destination):
-        self.source=source
-        self.destination=destination
-def createGraph(graph,start,end,weight):
-    graph[start-1].append(tuple())
-        
-l=[]
-l.append(edge(1,2))
-l.append(edge(1,3))
-l.append(edge(1,5))
-l.append(edge(2,1))
-l.append(edge(2,4))
-l.append(edge(3,1))
-l.append(edge(3,9))
-l.append(edge(4,2))
-l.append(edge(4,6))
-l.append(edge(4,5))
-l.append(edge(5,1))
-l.append(edge(5,9))
-l.append(edge(5,8))
-l.append(edge(5,7))
-l.append(edge(6,4))
-l.append(edge(6,7))
-l.append(edge(7,6))
-l.append(edge(7,5))
-l.append(edge(8,5))
-l.append(edge(9,3))
+class node:
+    def _init_(self, value):
+        self.data = value
+        self.left = None
+        self.right = None
+        self.height = 1
+class AVLTree(object):
+    def insert(self, root, value):
+        if root == None:
+            return node(value)
+        if (value < root.data):
+            root.left = self.insert(root.left, value)
+        elif value > root.data:
+            root.right = self.insert(root.right, value)
+
+        root.height = 1 + max(self.ght(root.left),
+                              self.ght(root.right))
+
+        bl = self.bal(root)
+
+        if bl > 1 and value < root.left.data:
+            return self.leftrotate(root)
+
+        if bl > 1 and value > root.left.data:
+            root.left = self.rightrotate(root.left)
+            return self.leftrotate(root)
+
+        if bl < -1 and value > root.right.data:
+            return self.rightrotate(root)
+
+        if bl < -1 and value < root.right.data:
+            root.right = self.leftrotate(root.right)
+            return self.rightrotate(root)
+        return root
+
+    def ght(self, root):
+        if root == None:
+            return 0
+        return root.height
+
+    def bal(self, root):
+        if root == None:
+            return 0
+        return self.ght(root.left) - self.ght(root.right)
+
+    def leftrotate(self, A):
+        if A is None or A.left is None:
+            return A
+        B = A.left
+        temp = B.right
+        B.right = A
+        A.left = temp
+
+        A.height = 1 + max(self.ght(A.left),
+                           self.ght(A.right))
+        B.height = 1 + max(self.ght(B.left),
+                           self.ght(B.right))
+        return B
+
+    def rightrotate(self, A):
+        if A is None or A.right is None:
+            return A
+        B = A.right
+        temp = B.left
+        B.left = A
+        A.right = temp
+
+        A.height = 1 + max(self.ght(A.left),
+                           self.ght(A.right))
+        B.height = 1 + max(self.ght(B.left),
+                           self.ght(B.right))
+        return B
+
+    def inorder(self, root):
+        if root == None:
+            return
+        self.inorder(root.left)
+        print(root.data, end=" ")
+        self.inorder(root.right)
 
 
+tree = AVLTree()
 
+root = None
+V_L = [50, 36, 12, 20, 76, 18, 44, 52, 90, 100, 12, 32, 44, 22, 44, 65, 45, 87, 65, 90, 24]
+for x in V_L:
+    root = tree.insert(root, x)
 
+print(root)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+tree.inorder(root)
