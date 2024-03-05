@@ -27,6 +27,41 @@ class Graph:
         else:
             self.adjacency_list.append([Edge(start, end)])
 
+    def bfs_traversal(self):
+        queue: list = [self.adjacency_list[0][0].start]
+        visited: list = [self.adjacency_list[0][0].start]
+        while len(queue) != 0:
+            cur_vertex: str = queue.pop(0)
+            destinations: list = self.__find_dest(cur_vertex)
+            for dest in destinations:
+                # print(visited, dest)
+                if dest not in visited:
+                    queue.append(dest)
+                    visited.append(dest)
+
+            print(cur_vertex)
+
+    def __find_dest(self, vertex: str) -> list:
+        destinations: list = []
+        for i in self.adjacency_list:
+            for j in i:
+                if j.start == vertex:
+                    destinations.append(j.end)
+        return destinations
+
+    def dfs_traversal(self):
+        self.__dfs([], self.adjacency_list[0][0].start)
+
+    def __dfs(self, visited: list, vertex: str):
+        if vertex in visited:
+            return
+        visited.append(vertex)
+        for dest in self.__find_dest(vertex):
+            if dest not in visited:
+                self.__dfs(visited, dest)
+
+        print(vertex)
+
     def display(self):
         for i in self.adjacency_list:
             for j in i:
@@ -69,3 +104,8 @@ if __name__ == '__main__':
     graph.insert("9", "5")
 
     graph.display()
+    print('------------------------bfs')
+    graph.bfs_traversal()
+    print('------------------------dfs')
+    graph.dfs_traversal()
+
