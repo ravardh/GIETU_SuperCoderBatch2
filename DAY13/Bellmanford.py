@@ -39,7 +39,6 @@ class GraphLevelOrder:
       for x in range(1,len(self.l)+1):
         dist[x]=float('inf')
       dist[start]=0
-      # print(len(self.l))
       for i in range(9):
         for i in range(len(self.l)-1):
           found_key = i+1
@@ -51,4 +50,3 @@ g.insertv()
 g.display()
 start=1
 print(g.belMan(start))
-#1-0 2-1 3 5 0 4 3
