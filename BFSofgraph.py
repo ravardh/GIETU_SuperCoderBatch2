@@ -1,42 +1,36 @@
-def adjacency_list():
-    adj_list = []
-    vertices = int(input("Enter the number of vertices: "))
-    
-    for i in range(1, vertices + 1):
-        conn = []
-        print(f"How many connections does vertex {i} have: ")
-        numconn = int(input())
-        print(f"Enter the connections for vertex {i} separated by space: ")
-        for _ in range(numconn):
-            dest = int(input("Destination: "))
-            conn.append(tuple((i, dest)))
-        adj_list.append(conn)
-        
-    for i, vertex_connections in enumerate(adj_list, start=1):
-        print(f"For vertex {i}:")
-        print(vertex_connections)
-        
-    print("BFS traversal:")
-    bfs(adj_list)
-
-def bfs(adj_list):
-    visited = {}
-    queue = []
-    
-    for i in range(1, len(adj_list) + 1):
-        visited[i] = False
-    
-    start_vertex = int(input("Enter the starting vertex for BFS: "))
-    queue.append(start_vertex)
-    visited[start_vertex] = True
-    
-    while queue:
-        current = queue.pop(0)
-        print(current, end=" ")
-        for connection in adj_list[current - 1]:
-            dest = connection[1]
-            if not visited[dest]:
-                queue.append(dest)
-                visited[dest] = True
-
-adjacency_list()
+def AdjacencyList():
+    A_L=[]
+    n=int(input("enter the  number of vertex:-"))
+    for i in range(1,n+1):
+        list = []
+        print(f"how many connections have for{i}:-")
+        con=int(input())
+        print(f"entre the connction of {i}by space \n")
+        for j in range(0, con):
+            b=int(input("dest:-"))
+            list.append(tuple((i,b)))
+        A_L.append(list)
+    j=1
+    for i in A_L:
+        print(f"for {j}th node:-")
+        print(i)
+        j+=1
+    print("the Bfs:-")
+    BFS(A_L)
+def BFS(A_L):
+    dict={}
+    Q=[]
+    for i in range(1,len(A_L)+1):
+        dict[i]=False
+    n=int(input("from where you want to traverse"))
+    Q.append(n)
+    dict[n]=True
+    while Q:
+        cur = Q.pop(0)
+        print(cur, end=" ")
+        for i in A_L[cur - 1]:
+            dest=i[1]
+            if not dict[dest]:
+                Q.append(dest)
+                dict[dest] =True
+AdjacencyList()
