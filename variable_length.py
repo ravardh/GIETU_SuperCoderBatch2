@@ -1,3 +1,4 @@
+#finding the maximum sum of selected no. of elements
 lst=[1,3,5,2,7,4,8,9,5,3,5,7,9,3,2,0]
 sum=0
 max=0
