@@ -37,15 +37,7 @@ def rightViewUse(root, cl, L):
     rightViewUse(root.left, cl + 1, L)
     rightViewUse(root.right, cl + 1, L)
 
-# def findNodes(root):
-#     if(root == None):
-#         return 
 
-#     l = findNodes(root.left)
-#     r = findNodes(root.right)
- 
-#     return 1 + l + r
- 
 
  
 root=node(1)
