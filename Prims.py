@@ -1,43 +1,36 @@
-from collections import defaultdict
-import heapq
-
-class Graph:
-    def __init__(self):
-        self.adj_list = defaultdict(list)
-
-    def add_edge(self, u, v, weight):
-        self.adj_list[u].append((v, weight))
-        self.adj_list[v].append((u, weight))  # Undirected graph
-
-    def prim_mst(self, start):
-        visited = set()
-        min_heap = [(0, start)]  # (weight, node)
-        mst_weight = 0
-        mst_edges = []
-
-        while min_heap:
-            weight, node = heapq.heappop(min_heap)
-            if node not in visited:
-                visited.add(node)
-                mst_weight += weight
-                for neighbor, neighbor_weight in self.adj_list[node]:
-                    if neighbor not in visited:
-                        heapq.heappush(min_heap, (neighbor_weight, neighbor))
-                        mst_edges.append((node, neighbor, neighbor_weight))
-
-        return mst_weight, mst_edges
-
-# Example usage:
-g = Graph()
-g.add_edge('A', 'B', 4)
-g.add_edge('A', 'C', 1)
-g.add_edge('B', 'C', 2)
-g.add_edge('B', 'D', 5)
-g.add_edge('C', 'D', 3)
-
-start_node = 'A'
-mst_weight, mst_edges = g.prim_mst(start_node)
-print("Minimum Spanning Tree Weight:", mst_weight)
-print("Minimum Spanning Tree Edges:")
-for edge in mst_edges:
-    print(edge)
+import sys
+class Graph():
+	def __init__(self,v):
+		self.V =v
+		self.graph = [[0 for column in range(v)]
+					for row in range(v)]
+	def printMST(self, p):
+		print("Edge \tWeight")
+		for i in range(1, self.V):
+			print(p[i], "-", i, "\t", self.graph[i][p[i]])
+	def minKey(self, key, m):
+		min = sys.maxsize
+		for v in range(self.V):
+			if key[v] < min and m[v] == False:
+				min = key[v]
+				min_index = v
+		return min_index
+	def primMST(self):
+		key = [sys.maxsize] * self.V
+		parent = [None] * self.V
+		key[0] = 0
+		mstSet = [False] * self.V
+		parent[0] = -1
+		for cout in range(self.V):
+			u = self.minKey(key, mstSet)
+			mstSet[u] = True
+			for v in range(self.V):
+				if self.graph[u][v] > 0 and mstSet[v] == False \
+				and key[v] > self.graph[u][v]:
+					key[v] = self.graph[u][v]
+					parent[v] = u
+		self.printMST(parent)
+g = Graph(5)
+g.graph = [[0, 2, 0, 6, 0],[2, 0, 3, 8, 5],[0, 3, 0, 0, 7],
+			[6, 8, 0, 0, 9],[0, 5, 7, 9, 0]]
+g.primMST()
