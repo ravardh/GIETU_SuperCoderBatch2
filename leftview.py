@@ -1,36 +1,29 @@
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
+
+class node:
+    def __init__(self, data):
+        self.data = data
         self.left = None
         self.right = None
+def Left_view(root, value, level):
+    current_level = value
+    if root is None:
+        return
+    if level[0] < current_level:
+        print(root.data)
+        level[0] = current_level
+    Left_view(root.left, current_level + 1, level)
+    Left_view(root.right, current_level + 1, level)
 
-def left_view(root):
-    left = []
-    def inorder_traversal(node, level):
-        nonlocal left
-        if node is None:
-            return
-        if level == len(left):
-            left.append(node.val)
-        inorder_traversal(node.left, level + 1)
-        inorder_traversal(node.right, level + 1)  
-    inorder_traversal(root, 0)  
-    return left
+def left(root):
+    level = [0]
+    Left_view(root, 1, level)
 
-root = TreeNode(20)
-root.left = TreeNode(32)
-root.right = TreeNode(10)
-root.left.left = TreeNode(15)
-root.left.right = TreeNode(12)
-root.right.left = TreeNode(8)
-root.right.right = TreeNode(24)
-root.left.left.left = TreeNode(4)
-root.left.right.left = TreeNode(50)
-root.left.right.right = TreeNode(6)
-root.left.right.left.left = TreeNode(40)
-root.left.right.left.right = TreeNode(35)
-root.right.right.left = TreeNode(16)
-root.right.right.right = TreeNode(2)
+root = node(1)
+root.left = node(32)
+root.right = node(10)
+root.left.left = node(15)
+root.left.right = node(12)
+root.right.left = node(8)
+root.right.right = node(24)
 
-left_view_result = left_view(root)
-print("Left view of the binary tree:", left_view_result)
+print(left(root))

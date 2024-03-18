@@ -1,7 +1,13 @@
-str = "ABCBBACBAABACBABC"
-p = input("enter the patterns:")
-index_length = []
-for i in range(len(str)-(len(p)-1)):
-    if str[i:i +len(p)] == (p):
-        index_length.append(i)
-print(index_length)
+
+#String =ABCBBACBAABACBABC
+#patteern=CBA
+def pattern_string(a,p):
+    if len(p)>len(a):
+        return "Length of pattern is greater than length of String"
+    k=len(p)
+    for i in range(len(a)-k+1):
+        if p==a[i:i+k]:
+            print(i)
+a="ABCBBACBAABACBABC"
+p="CBA"
+pattern_string(a,p)

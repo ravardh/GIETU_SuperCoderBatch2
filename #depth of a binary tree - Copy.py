@@ -1,5 +1,5 @@
 class node:
-    def __init__(self,data):
+    def _init_(self,data):
         self.data=data
         self.right=None
         self.left=None
@@ -19,7 +19,7 @@ def top_view(root):
         if curr.left != None:
             Q.append(curr.left)
             curr.left.key=key-1
-        if curr.right != None:
+        if curr.right != None:  
             Q.append(curr.right)
             curr.right.key=key+1
     for x in sorted(TV.keys()):
@@ -32,3 +32,5 @@ root.left.left=node(15)
 root.left.right=node(26)
 root.right.left=node(21)
 root.right.right=node(22)
+
+
