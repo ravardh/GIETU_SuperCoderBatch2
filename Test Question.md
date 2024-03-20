@@ -1,4 +1,4 @@
-<p align="center"><h1>Morning Exam</h1></p> 
+<p align="center"><h1>Morning Exam</h1></p>
 
 # Question 1
 Peter was a B. tech Graduate Student who went to Hyderabad for his job internship. When he reached the Cybercity he found that there were many modern infrastructure facilities, including state-of-the-art office spaces, commercial buildings, and residential complexes. There are multiple towers with the company branding on the top floor. Standing by the roadside Peter captured a Picture of the cyber city in portrait mode. Consider that the height of the buildings is given in an array mentioning the number of max floors. Find out how many company banners are captured by the Peters Camera.  
