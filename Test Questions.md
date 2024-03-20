@@ -11,13 +11,14 @@ Peter was a B. tech Graduate Student who went to Hyderabad for his job internshi
 | [5, 10, 5, 15, 5, 20] | 4 |
 | [25, 15, 30, 20, 25] | 2 |
 
-Solution : [Road Cutting](https://github.com/ravardh/GIETU_SuperCoderBatch2/blob/SatyaSandeep_21CSE216/Road%20Cutting.py)
+## Solution : [Banners are captured by camera](https://github.com/ravardh/GIETU_SuperCoderBatch2/blob/SatyaSandeep_21CSE216/Banners%20are%20captured%20by%20camera.py)
 <hr>
 
 # Question 2
 Given the root of the BST and K as input, find the Kth smallest element in it.
 For example, in the following BST, if k = 3, then the output should be 10, and if k = 5, then the output should be 14.
 
+## Solution : [Kth smallest element](https://github.com/ravardh/GIETU_SuperCoderBatch2/blob/SatyaSandeep_21CSE216/Kth%20smallest%20element.py)
 <hr>
 <h1 align="center">Evening Exam</h1>
 <hr>
@@ -29,6 +30,7 @@ In a traditional forge, a blacksmith faces the challenge of efficiently cutting 
 | length = [1, 2, 3, 4, 5, 6, 7, 8] <br> price = [1, 5, 8, 9, 10, 17, 17, 20] | 22 |
 | length: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] <br> price:  [3, 5, 8, 9, 10, 17, 17, 20, 22, 25, 30, 35] | 36 |
 
+## Solution : [Road Cutting](https://github.com/ravardh/GIETU_SuperCoderBatch2/blob/SatyaSandeep_21CSE216/Road%20Cutting.py)
 <hr>
 
 # Question 2
@@ -38,3 +40,5 @@ Mr. X, a faculty member at a prestigious educational institution, has been taske
 | S: [10:00, 10:30, 11:00, 11:30] <br> E: [10:30, 11:00, 11:30, 12:00] | 1 |
 | S: [9:00, 9:30, 11:00, 12:00] <br> E: [10:15, 11:00, 12:15, 13:00] | 2 |
 | S: [9:00, 9:15, 9:30, 9:00, 10:15] <br> E: [10:00, 10:30, 10:45, 9:30, 11:30] | 3 |
+
+## Solution : [No of labs required](https://github.com/ravardh/GIETU_SuperCoderBatch2/blob/SatyaSandeep_21CSE216/No%20of%20labs%20required.py)
