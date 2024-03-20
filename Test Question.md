@@ -11,6 +11,7 @@ Peter was a B. tech Graduate Student who went to Hyderabad for his job internshi
 | [5, 10, 5, 15, 5, 20] | 4 |
 | [25, 15, 30, 20, 25] | 2 |
 
+Solution : [Road Cutting](https://github.com/ravardh/GIETU_SuperCoderBatch2/blob/SatyaSandeep_21CSE216/Road%20Cutting.py)
 <hr>
 
 # Question 2
