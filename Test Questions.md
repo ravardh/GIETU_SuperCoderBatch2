@@ -9,7 +9,7 @@ Peter was a B. tech Graduate Student who went to Hyderabad for his job internshi
 | [5, 10, 5, 15, 5, 20] | 4 |
 | [25, 15, 30, 20, 25] | 2 |
 
-## Solution : [Banners are captured by camera](https://github.com/ravardh/GIETU_SuperCoderBatch2/blob/SatyaSandeep_21CSE216/Banners%20are%20captured%20by%20camera.py)
+## Solution : [Banners are captured by camera](./Banners%20are%20captured%20by%20camera.py)
 
 # Question 2
 Given the root of the BST and K as input, find the Kth smallest element in it.
