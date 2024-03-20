@@ -19,7 +19,5 @@ For example, in the following BST, if k = 3, then the output should be 10, and i
 In a traditional forge, a blacksmith faces the challenge of efficiently cutting metal rods to fulfil customer orders of varying lengths. With limited equipment and stock, including a single cutting tool, the objective is to maximize customer satisfaction by fulfilling as many orders as possible while minimizing waste. An algorithm or strategy is needed to optimize the sequence of rod cuts, utilizing available resources effectively. Considerations include minimizing waste, handling unfulfilled orders, Maximize the Profit and streamlining workflow to enhance customer satisfaction and resource utilization.
 | Input | Output |
 | ----- | ------ |
-| length = [1, 2, 3, 4, 5, 6, 7, 8]
-price = [1, 5, 8, 9, 10, 17, 17, 20] | 22 |
-| ength: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-price:  [3, 5, 8, 9, 10, 17, 17, 20, 22, 25, 30, 35] | 36 |
+| length = [1, 2, 3, 4, 5, 6, 7, 8] <br> price = [1, 5, 8, 9, 10, 17, 17, 20] | 22 |
+| length: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] <br> price:  [3, 5, 8, 9, 10, 17, 17, 20, 22, 25, 30, 35] | 36 |
