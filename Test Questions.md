@@ -10,7 +10,6 @@ Peter was a B. tech Graduate Student who went to Hyderabad for his job internshi
 | [25, 15, 30, 20, 25] | 2 |
 
 ## Solution : [Banners are captured by camera](https://github.com/ravardh/GIETU_SuperCoderBatch2/blob/SatyaSandeep_21CSE216/Banners%20are%20captured%20by%20camera.py)
-<hr>
 
 # Question 2
 Given the root of the BST and K as input, find the Kth smallest element in it.
@@ -28,7 +27,6 @@ In a traditional forge, a blacksmith faces the challenge of efficiently cutting 
 | length: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] <br> price:  [3, 5, 8, 9, 10, 17, 17, 20, 22, 25, 30, 35] | 36 |
 
 ## Solution : [Road Cutting](https://github.com/ravardh/GIETU_SuperCoderBatch2/blob/SatyaSandeep_21CSE216/Road%20Cutting.py)
-<hr>
 
 # Question 2
 Mr. X, a faculty member at a prestigious educational institution, has been tasked with preparing a schedule for the upcoming B-Tech batch. The schedule needs to accommodate practical classes for various subjects across different departments. Each department has provided the timings for their practical classes, and Mr. Singh needs to determine how many labs are required to conduct all the classes efficiently.
