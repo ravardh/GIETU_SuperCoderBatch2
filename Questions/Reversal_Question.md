@@ -1,4 +1,4 @@
-<h3>Imagine a vibrant city with people from diverse backgrounds and cultures, each carrying their own stories and experiences. In the heart of this city is a bustling marketplace where individuals gather to share their tales, creating a rich tapestry of narratives.
+<h3>Imagine a vibrant city with people from diverse backgrounds and cultures, each carrying their own stories and experiences. In the heart of this city is a bustling marketplace where individuals gather to share their tales, creating a rich tapestry of narratives.<br>
 
 
 In this lively setting, there's a unique tradition where people express themselves through words written on colourful banners. However, there's a challenge – the words on these banners are sometimes arranged in a way that doesn't quite capture the essence of the stories.
